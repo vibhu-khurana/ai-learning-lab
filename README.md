@@ -12,6 +12,9 @@ ai-learning-lab/
 │
 ├── tokenization/
 │   └── tiktoken_basics.py
+|
+├── weather_agent/
+│   └── main.py
 │
 ├── .gitignore
 └── README.md
@@ -23,3 +26,12 @@ ai-learning-lab/
 
 2. Activate:
    source venv/bin/activate
+
+## Weather Agent
+
+This agent demonstrates:
+- Tool calling
+- JSON structured output
+- Multi-step reasoning (START → PLAN → TOOL → OUTPUT)
+- External API integration
+- Controlled system command execution
