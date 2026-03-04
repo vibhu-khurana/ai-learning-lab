@@ -9,6 +9,11 @@ A hands-on experimentation repository for understanding Large Language Models (L
 ## Project Structure
 
 ai-learning-lab/
+├── rag/
+│   ├── index.py
+│   ├── chat.py
+│   ├── nodejs.pdf
+│   ├── docker-compose.yml
 │
 ├── tokenization/
 │   └── tiktoken_basics.py
@@ -35,3 +40,24 @@ This agent demonstrates:
 - Multi-step reasoning (START → PLAN → TOOL → OUTPUT)
 - External API integration
 - Controlled system command execution
+
+## RAG Implementation
+
+This module demonstrates:
+
+- PDF ingestion using PyPDFLoader
+- Recursive text chunking
+- OpenAI embedding generation
+- Qdrant vector database integration
+- Retrieval-based answering
+
+### To Run
+
+1. Start Qdrant:
+   docker-compose up -d
+
+2. Index documents:
+   python rag/index.py
+
+3. Run chat:
+   python rag/chat.py
