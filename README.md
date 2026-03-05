@@ -17,6 +17,10 @@ ai-learning-lab/
 │
 ├── tokenization/
 │   └── tiktoken_basics.py
+├── UI_sme_assistant/
+│   ├── lambda_function.py
+│   ├── sample_test_event.json
+│   ├── streamlit_app.py
 |
 ├── weather_agent/
 │   └── main.py
@@ -61,3 +65,53 @@ This module demonstrates:
 
 3. Run chat:
    python rag/chat.py
+
+
+#### 🧠 GenAI Equipment SME Assistant (Production Architecture)
+
+Overview
+
+This project demonstrates a production-style GenAI system that enables equipment Subject Matter Experts (SMEs) to interact with an AI assistant powered by Amazon Bedrock foundation models.
+
+The system follows a serverless architecture using AWS managed services to provide scalability, security, and observability.
+
+Flow
+
+1️⃣ User Prompt
+The Equipment SME submits a query from the frontend interface.
+
+2️⃣ API Layer – AWS API Gateway
+API Gateway receives the request and securely forwards it to a Lambda function.
+
+3️⃣ Compute Layer – AWS Lambda
+The Lambda function:
+
+Processes the request
+
+Injects a system prompt
+
+Invokes an Amazon Bedrock foundation model
+
+4️⃣ GenAI Layer – Amazon Bedrock
+The Lambda invokes a foundation model such as:
+
+Claude
+
+Amazon Nova
+
+Gemini
+
+The model generates a response based on the system prompt and user query.
+
+5️⃣ Observability – CloudWatch + SNS
+
+Monitoring is implemented using:
+
+Amazon CloudWatch Logs – captures application logs
+
+CloudWatch Metrics – tracks invocation metrics
+
+CloudWatch Alarms – detects anomalies
+
+Amazon SNS – sends alert notifications
+
