@@ -9,6 +9,10 @@ A hands-on experimentation repository for understanding Large Language Models (L
 ## Project Structure
 
 ai-learning-lab/
+├── chatbot/
+│   ├── chatbot_backend.py
+│   ├── chatbot_backend_intermediate.py
+│   ├── chatbot_frontend.py
 ├── rag/
 │   ├── index.py
 │   ├── chat.py
@@ -55,7 +59,7 @@ This module demonstrates:
 - Qdrant vector database integration
 - Retrieval-based answering
 
-### To Run
+## To Run
 
 1. Start Qdrant:
    docker-compose up -d
@@ -67,7 +71,7 @@ This module demonstrates:
    python rag/chat.py
 
 
-#### 🧠 GenAI Equipment SME Assistant (Production Architecture)
+## 🧠 GenAI Equipment SME Assistant (Production Architecture)
 
 Overview
 
@@ -75,7 +79,7 @@ This project demonstrates a production-style GenAI system that enables equipment
 
 The system follows a serverless architecture using AWS managed services to provide scalability, security, and observability.
 
-Flow
+## Flow
 
 1️⃣ User Prompt
 The Equipment SME submits a query from the frontend interface.
@@ -115,3 +119,36 @@ CloudWatch Alarms – detects anomalies
 
 Amazon SNS – sends alert notifications
 
+Architecture Overview
+
+## Flow Explanation
+
+User Input
+
+User enters a question in the Streamlit interface.
+
+Conversation History Retrieval
+
+LangChain memory retrieves previous conversation history.
+
+Prompt Construction
+
+The prompt is built using:
+
+Current user query
+
+Past messages from memory
+
+LLM Invocation
+
+The prompt is sent to Amazon Bedrock foundation model.
+
+Response Processing
+
+The output from the model is parsed.
+
+UI Response
+
+Streamlit displays the response to the user.
+
+The conversation history is stored using LangChain ConversationSummaryBufferMemory which ensures context-aware responses.
