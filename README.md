@@ -119,7 +119,11 @@ CloudWatch Alarms – detects anomalies
 
 Amazon SNS – sends alert notifications
 
-Architecture Overview
+## AI Learning Lab – Bedrock Chatbot with LangChain
+
+This project demonstrates how to build a conversational AI chatbot using AWS Bedrock, LangChain, and Streamlit. The chatbot maintains conversation context using memory and interacts with Amazon Bedrock foundation models to generate responses.
+
+The goal of this repository is to experiment with LLM integrations, conversational memory, and AI application architecture.
 
 ## Flow Explanation
 
